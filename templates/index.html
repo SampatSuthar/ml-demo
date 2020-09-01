@@ -1,0 +1,88 @@
+<html> 
+<body> 
+    <h3>Initiative Prediction Form</h3> 
+  
+<div> 
+  <form action="{{ url_for('predict')}}" method="POST"> 
+    <label for="ini_level">Initiative level</label>
+    <select id="ini_level" name="ini_level"> 
+      <option value="1">High</option> 
+      <option value="2">LLow</option> 
+    </select> 
+    <br> 
+    <label for="status">Status</label>
+    <select id="status" name="status"> 
+      <option value="1">active</option> 
+      <option value="2">on hold</option> 
+      <option value="3">complete</option> 
+      <option value="4">under review</option> 
+      <option value="5">archived</option> 
+      <option value="6">Cancelled</option> 
+    </select> 
+    <br> 
+    <label for="time period(in days)">dueday</label>
+    <input type="text" id="time period(in days)" name="time period(in days)"> 
+    <br> 
+    <label for="goal clarity">goal clarity</label>
+    <select id="goal clarity" name="goal clarity"> 
+      <option value="0">clear</option> 
+      <option value="1">Complex</option> 
+    </select> 
+    <br> 
+    <label for="experience(years)">experience</label>
+    <input type="text" id="experience(years)" name="experience(years)">
+    <br> 
+    <label for="leadership">leadership</label>
+    <select id="leadership" name="leadership"> 
+      <option value="0">influencive</option> 
+      <option value="1">Not-influencive</option> 
+    </select> 
+    <br> 
+    <label for="budget">Capital Gain </label>
+    <select id="budget" name="budget"> 
+      <option value="1">High</option> 
+      <option value="2">Low</option>
+      <option value="3">Medium</option>
+    </select> 
+    <br> 
+    <label for="employee talent">employee talent </label>
+    <select id="employee talent" name="employee talent"> 
+      <option value="1">Excellent skills</option> 
+      <option value="2">Good Skills</option>
+      <option value="0">Average Skills</option>
+    </select> 
+    <br> 
+    <label for="environment">environment</label>
+    <select id="environment" name="environment"> 
+      <option value="1">1</option> 
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select> 
+    <br> 
+    <label for="adaptbility">adaptbility</label>
+    <select id="adaptbility" name="adaptbility"> 
+      <option value="0">Not quick adaptble</option> 
+      <option value="1">quick adaptble</option> 
+    </select> 
+    <br> 
+    <label for="stress">stress</label>
+    <select id="stress" name="stress"> 
+      <option value="0">physical</option> 
+      <option value="1">psychosocial</option> 
+    </select> 
+    <br> 
+    <label for="fear of loss">fear of loss</label>
+    <select id="fear of loss" name="fear of loss"> 
+      <option value="0">reactional</option> 
+      <option value="1">Not reactional</option> 
+    </select> 
+    <br> 
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button> 
+  </form>
+  <br>
+   <br>
+   {{ prediction }}
+</div> 
+</body> 
+</html>
