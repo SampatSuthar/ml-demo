@@ -18,7 +18,7 @@ def predict():
     final_features = [np.array(int_features)]
     prediction = model.predict_proba(final_features)
     prediction = prediction[:, 1]
-
+    predict = prediction[:, 1]
     output = np.round(prediction[0], 2)
 
     return render_template('index.html',  prediction ='Probability of initiative completion is {}'.format(output))
