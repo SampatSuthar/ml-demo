@@ -32,19 +32,17 @@ from sklearn import preprocessing
 
 
 # Import and suppress warnings
-import warnings
-warnings.filterwarnings('ignore')
+#import warnings
+#warnings.filterwarnings('ignore')
 
 # loading data
 initiative = pd.read_csv('C:/Users/Sampat Suthar/Desktop/Excel files/new_test.csv')
-
+initiative1 = pd.read_csv('C:/Users/Sampat Suthar/Desktop/Excel files/new_test.csv')
 ## Drop insignificant variables
-
 initiative = initiative.drop(['ID', 'set_id','goal','category','init_id','initiative','stratgoals','groups','duedate','assignoto','manager','updatedate'], axis=1)
 
 # converting target variable in numeric value
-
-le = preprocessing.LabelEncoder()
+#le = preprocessing.LabelEncoder()
 new_initiative = initiative ##  
 new_initiative = new_initiative.apply(le.fit_transform)
 
@@ -52,17 +50,12 @@ new_initiative = new_initiative.apply(le.fit_transform)
 
 x = new_initiative.drop('completion on time',axis =1)
 y = new_initiative['completion on time']
-
 ## running random forest 
-
 rf = RandomForestClassifier(oob_score = True, random_state = 0)
-random_forest = rf.fit(x,y)
+#random_forest = rf.fit(x,y)
 
 # Prediction
 prediction = random_forest.predict(x)
-
-# saving model to disk
-
 pickle.dump(random_forest, open('model.pkl', 'wb'))
 
 # loading model to compare results
