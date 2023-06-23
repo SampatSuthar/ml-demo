@@ -52,17 +52,12 @@ new_initiative = new_initiative.apply(le.fit_transform)
 
 x = new_initiative.drop('completion on time',axis =1)
 y = new_initiative['completion on time']
-
 ## running random forest 
-
 rf = RandomForestClassifier(oob_score = True, random_state = 0)
-random_forest = rf.fit(x,y)
+#random_forest = rf.fit(x,y)
 
 # Prediction
 prediction = random_forest.predict(x)
-
-# saving model to disk
-
 pickle.dump(random_forest, open('model.pkl', 'wb'))
 
 # loading model to compare results
