@@ -55,7 +55,7 @@ rf = RandomForestClassifier(oob_score = True, random_state = 0)
 #random_forest = rf.fit(x,y)
 
 # Prediction
-predict = random_forest.predict(x)
+Prediction = random_forest.predict(x)
 pickle.dump(random_forest, open('model.pkl', 'wb'))
 
 # loading model to compare results
