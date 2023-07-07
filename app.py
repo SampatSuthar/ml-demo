@@ -22,7 +22,7 @@ def predict():
     output = np.round(prediction[0], 2)
 
     import openai
-    openai.api_key = "fjfhdskjfdsjgkjdfsgjkfdgdfsklvgjfdkgvsdfkgjdfksgdfsjkg"
+    openai.api_key = ${{ secrets.OPENAI_API_KEY }}
     prompt = "create openai API for pull request summary in github"
     model = "text-davinci-003"
     response = openai.Completion.create(engine=model, prompt=prompt, max_tokens=10)
