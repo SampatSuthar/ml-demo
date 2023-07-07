@@ -4,11 +4,8 @@ import numpy as np
 #import seaborn as sns
 import pickle
 
-
-
-
-#import xgboost
-#from xgboost import XGBClassifier # import XGBoost Classifier
+import xgboost
+from xgboost import XGBClassifier # import XGBoost Classifier
 
 #from sklearn.linear_model import LogisticRegression # Import Logistic Regression
 #from sklearn.tree import DecisionTreeClassifier # Import Decision Tree Classifier
@@ -52,10 +49,10 @@ x = new_initiative.drop('completion on time',axis =1)
 y = new_initiative['completion on time']
 ## running random forest 
 rf = RandomForestClassifier(oob_score = True, random_state = 0)
-#random_forest = rf.fit(x,y)
+#random_forest_model = rf.fit(x,y)
 
 # Prediction
-predict = random_forest.predict(x)
+Prediction = random_forest_model.predict(x)
 pickle.dump(random_forest, open('model.pkl', 'wb'))
 
 # loading model to compare results
