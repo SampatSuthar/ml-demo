@@ -27,8 +27,8 @@ def predict():
     model = "davinci-003"
     response = openai.Completion.create(engine=model, prompt=prompt, max_tokens=10)
     
-    generated_text = response.choices[0].text
-    print(generated_text)
+    generated = response.choices[0].text
+    print(generated)
     
     return render_template('index.html',  prediction ='Probability of initiative completion is {}'.format(output))
 
