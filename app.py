@@ -21,14 +21,14 @@ def predict():
     #predict = prediction[:, 1]
     output = np.round(prediction[0], 2)
 
-    import openai
-    openai.api_key = ${{ secrets.OPENAI_API_KEY }}
+    #import openai
+    #openai.api_key = ${{ secrets.OPENAI_API_KEY }}
     prompt = "create openai API for pull request summary in github"
-    model = "text-davinci-003"
+    model = "davinci-003"
     response = openai.Completion.create(engine=model, prompt=prompt, max_tokens=10)
     
-    generated_text = response.choices[0].text
-    print(generated_text)
+    generated = response.choices[0].text
+    print(generated)
     
     return render_template('index.html',  prediction ='Probability of initiative completion is {}'.format(output))
 
