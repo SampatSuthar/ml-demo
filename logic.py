@@ -1,6 +1,6 @@
 ## conditons when we have list of possible values 
 ## practicing the condtinal logic in python
-state = 'Karnataka'
+state = 'Rajasthan'
 if state.lower() in('rajasthan','gujrat','karnataka'):
     petorl_price = 108.18
     print('Petrol price in ',state, 'is ', petorl_price)
